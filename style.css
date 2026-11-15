@@ -99,32 +99,31 @@ body {
     -webkit-text-size-adjust: none;
 }
 
-/* Vista Móvil: Forzar lado a lado */
+/* Vista Móvil */
 @media (max-width: 768px) {
     .contenedor { 
-        flex-direction: row; /* Forzamos que se mantengan uno al lado del otro */
-        justify-content: space-between;
+        flex-direction: row; 
+        justify-content: center; /* Quitamos el space-between que causaba el abismo */
         align-items: center;
     }
     .texto-container { 
-        flex: 0.5; /* Toma exactamente la mitad izquierda de la pantalla */
+        flex: 0.55; /* Le damos 55% de la pantalla al texto para que no se corte tanto */
         height: 100%;
         padding: 0.5rem; 
         z-index: 20; 
     }
     .frase-principal { 
-        font-size: 1.5rem; /* Reducimos la letra para que quepa en su mitad */
-        margin-bottom: 3rem; /* Separación ajustada para móvil */
+        font-size: 1.5rem; 
+        margin-bottom: 2rem; 
     }
     .frase-secundaria { 
         font-size: 1.1rem; 
     }
     .ascii-container {
-        flex: 0.5; /* Toma la mitad derecha de la pantalla */
+        flex: 0.45; /* El 45% restante para las flores */
         height: 100%;
-        /* Encogemos la animación a menos de la mitad para que no desborde */
-        transform: scale(0.40); 
-        transform-origin: center right; /* La anclamos a la orilla derecha */
+        transform: scale(0.45); /* Escala balanceada */
+        transform-origin: center left; /* CRÍTICO: Esto ancla las flores pegadas al texto, cerrando el hueco */
         z-index: 1; 
     }
 }
