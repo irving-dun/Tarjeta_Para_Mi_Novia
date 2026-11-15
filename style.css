@@ -101,23 +101,24 @@ body {
 /* Ajuste específico para iPhone / Móviles */
 @media (max-width: 768px) {
     .texto-container { 
-        width: 56%;
-        padding: 0 0.5rem 0 1rem; 
+        width: 50%;
+        padding: 0; 
     }
     .frase-principal { 
         font-size: 1.45rem; 
-        margin-bottom: 2.5rem; 
+        margin-bottom: 2rem; 
     }
     .frase-secundaria { 
         font-size: 1.15rem; 
     }
     .ascii-container {
         width: 44%;
+        justify-content: flex-start
     }
     .ascii-wrapper {
         /* Escala solo el bloque interno y lo ancla a la derecha */
-        transform: scale(0.45);
-        transform-origin: center right;
+        transform: scale(0.40);
+        transform-origin: center left;
     }
 }
 
