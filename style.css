@@ -103,31 +103,30 @@ body {
 @media (max-width: 768px) {
     .contenedor { 
         flex-direction: row; 
-        justify-content: center; /* Quitamos el space-between que causaba el abismo */
+        justify-content: center; 
         align-items: center;
     }
     .texto-container { 
-        flex: 0.55; /* Le damos 55% de la pantalla al texto para que no se corte tanto */
+        flex: 0.5; /* Mitad exacta de la pantalla para el texto */
         height: 100%;
-        padding: 0.5rem; 
+        padding: 0 0.5rem; /* Quitamos un poco de margen para que la letra respire */
         z-index: 20; 
     }
     .frase-principal { 
-        font-size: 1.5rem; 
+        font-size: 1.4rem; /* Ligeramente más pequeño para que no se rompa en tantas líneas */
         margin-bottom: 2rem; 
     }
     .frase-secundaria { 
-        font-size: 1.1rem; 
+        font-size: 1rem; 
     }
     .ascii-container {
-        flex: 0.45; /* El 45% restante para las flores */
+        flex: 0.5; /* Mitad exacta para las flores */
         height: 100%;
-        transform: scale(0.45); /* Escala balanceada */
-        transform-origin: center left; /* CRÍTICO: Esto ancla las flores pegadas al texto, cerrando el hueco */
+        transform: scale(0.45); 
+        transform-origin: center center; /* CRÍTICO: Esto mantiene las flores centradas en su lado derecho */
         z-index: 1; 
     }
 }
-
 
 
 
