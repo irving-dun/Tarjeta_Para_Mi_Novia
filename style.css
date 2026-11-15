@@ -35,17 +35,17 @@ body {
 .texto-container {
     width: 55%;
     padding: 0 1rem 0 1.5rem;
-    text-align: center;
+    text-align: left;
     z-index: 20;
 }
 
 .frase-principal {
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Great Vibes', Cursive; 
     font-size: 3rem;
     font-style: italic; 
     color: #fff0f3; 
     margin-bottom: 4rem; 
-    line-height: 1.25; 
+    line-height: 1.1; 
     text-shadow: 
         0 0 8px rgba(255, 194, 209, 0.8), 
         0 0 20px rgba(255, 150, 180, 0.6),
@@ -53,9 +53,10 @@ body {
 }
 
 .frase-secundaria {
-    font-family: 'Dancing Script', cursive; 
+    font-family:'Montserrat', sans-serif;
     font-size: 2.2rem; 
     color: #ffffff; 
+    letter-spacing: 1px;
     text-shadow: 
         0 0 6px rgba(255, 255, 255, 0.7), 
         0 0 15px rgba(255, 194, 209, 0.5);
@@ -100,26 +101,28 @@ body {
 
 /* Ajuste específico para iPhone / Móviles */
 @media (max-width: 768px) {
+    .contenedor { 
+        justify-content: flex-start;
+    }
     .texto-container { 
-        width: 50%;
-        padding: 0; 
+        width: 58%; /* Le damos un poco más de espacio al texto */
+        padding: 0 0 0 1.2rem; /* Separación sutil del borde izquierdo */
     }
     .frase-principal { 
-        font-size: 1.45rem; 
-        margin-bottom: 2rem; 
+        font-size: 2.6rem; /* Esta fuente necesita ser más grande por su estilo manuscrito */
+        margin-bottom: 1.2rem; 
     }
     .frase-secundaria { 
-        font-size: 1.15rem; 
+        font-size: 0.9rem; 
+        letter-spacing: 0.5px;
     }
     .ascii-container {
-        width: 44%;
-        justify-content: flex-start
+        width: 42%;
+        justify-content: flex-start; 
     }
     .ascii-wrapper {
-        /* Escala solo el bloque interno y lo ancla a la derecha */
-        transform: scale(0.40);
-        transform-origin: center left;
+        transform: scale(0.38); /* Lo encogemos un milímetro más para que todo respire */
+        transform-origin: center left; 
     }
 }
-
 
