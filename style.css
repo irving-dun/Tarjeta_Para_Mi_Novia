@@ -100,29 +100,48 @@ body {
 }
 
 /* Ajuste específico para iPhone / Móviles */
+/* --- VISTA MÓVIL REFINADA - SIN HUECOS Y EN CAPAS --- */
 @media (max-width: 768px) {
     .contenedor { 
-        justify-content: flex-start;
+        position: relative; /* Clave para poder superponer elementos */
+        display: flex;
+        align-items: center;
     }
+    
     .texto-container { 
-        width: 58%; /* Le damos un poco más de espacio al texto */
-        padding: 0 0 0 1.2rem; /* Separación sutil del borde izquierdo */
+        position: relative;
+        width: 85%; /* ¡Más ancho! La frase ya no se cortará en tantas líneas */
+        padding-left: 1.5rem; 
+        z-index: 20; /* Texto siempre al frente */
     }
+    
     .frase-principal { 
-        font-size: 2.6rem; /* Esta fuente necesita ser más grande por su estilo manuscrito */
-        margin-bottom: 1.2rem; 
+        font-size: 3.2rem; /* Más grande y poética */
+        margin-bottom: 2.5rem; 
+        line-height: 1.15;
     }
+    
     .frase-secundaria { 
-        font-size: 0.9rem; 
-        letter-spacing: 0.5px;
+        font-size: 1.25rem; 
     }
+    
     .ascii-container {
-        width: 42%;
-        justify-content: flex-start; 
+        position: absolute; /* Libera a las flores para que puedan crecer */
+        top: 0;
+        right: 0; /* Ancladas al borde derecho de la pantalla */
+        width: 100%; 
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        z-index: 5; /* Si tocan el texto, pasarán limpiamente por detrás */
+        pointer-events: none;
     }
+    
     .ascii-wrapper {
-        transform: scale(0.38); /* Lo encogemos un milímetro más para que todo respire */
-        transform-origin: center left; 
+        /* ¡Las hacemos gigantes! Llenarán el vacío de arriba a abajo */
+        transform: scale(0.70); 
+        transform-origin: center right; 
     }
 }
 
