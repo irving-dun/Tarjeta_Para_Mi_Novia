@@ -54,11 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
             if (this.tipo === "petalo") {
                 const coloresPetalo = ["#ffb7c5", "#ffc2d1", "#fff0f3", "#ffccd5"];
                 this.color = coloresPetalo[Math.floor(Math.random() * coloresPetalo.length)];
-                // Aumentamos el tamaño para que se aprecie la forma (6 a 12 píxeles)
-                this.size = Math.random() * 6 + 6; 
+                
+                this.size = Math.random() * 4 + 4; 
                 this.speedY = Math.random() * 0.8 + 0.5; 
                 this.speedX = (Math.random() - 0.5) * 0.5;
-                this.opacity = Math.random() * 0.6 + 0.4;
+                this.opacity = Math.random() * 0.4 + 0.2;
                 this.fadeSpeed = 0; 
                 this.y = -20; 
                 
