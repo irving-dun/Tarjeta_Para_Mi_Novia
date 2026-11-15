@@ -28,9 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let particles = [];
     
     function resizeCanvas() {
-        const rect = canvas.parentNode.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
