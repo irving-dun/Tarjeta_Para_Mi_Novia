@@ -99,53 +99,53 @@ body {
     -webkit-text-size-adjust: none;
 }
 
-/* --- VISTA MÓVIL: CAPAS ABSOLUTAS (OVERLAP) --- */
+/* --- VISTA MÓVIL: SUPERPOSICIÓN SEGURA --- */
 @media (max-width: 768px) {
     .contenedor { 
-        display: block; /* Apagamos el flexbox que causaba las columnas */
-        position: relative; 
+        position: relative;
+        display: flex;
         width: 100%;
         height: 100%;
-    }
-    
-    /* CAPA DEL FONDO (FLORES) */
-    .ascii-container {
-        position: absolute; /* Libre de ataduras */
-        top: 0;
-        right: -10%; /* Lo empujamos ligeramente hacia el borde derecho */
-        width: 100%; 
-        height: 100%;
-        display: flex;
-        justify-content: flex-end;
         align-items: center;
-        z-index: 5; /* Se queda atrás */
-        pointer-events: none;
-    }
-    
-    .ascii-wrapper {
-        transform: scale(0.85); /* ¡Flores gigantes que llenan todo el alto! */
-        transform-origin: center right; 
+        justify-content: flex-end; /* Obliga a las flores a irse a la derecha */
     }
 
-    /* CAPA FRONTAL (TEXTO) */
+    /* TEXTO FLOTANDO AL FRENTE (Absolute) */
     .texto-container { 
         position: absolute;
-        top: 50%; /* Centrado vertical matemático */
-        left: 5%; /* Un pequeñísimo margen izquierdo */
-        transform: translateY(-50%); /* Ajuste fino del centrado */
-        width: 90%; /* Toma casi toda la pantalla para que la frase no se corte */
-        padding: 0;
-        z-index: 20; /* Flota triunfante sobre las flores */
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%); /* Centrado vertical exacto */
+        width: 100%;
+        padding: 0 1rem 0 1.5rem; /* Respetamos el margen izquierdo */
+        z-index: 30; /* Por encima de todo */
         text-align: left;
     }
     
     .frase-principal { 
-        font-size: 3.5rem; /* Tamaño de poema */
-        margin-bottom: 2rem; 
+        font-size: 3.2rem; 
+        margin-bottom: 2.2rem; 
         line-height: 1.1;
     }
     
     .frase-secundaria { 
-        font-size: 1.3rem; 
+        font-size: 1.25rem; 
+    }
+
+    /* FLORES EN SU LUGAR (Relativas y seguras) */
+    .ascii-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end; /* Pegadas al borde derecho */
+        align-items: center;
+        z-index: 5;
+    }
+    
+    .ascii-wrapper {
+        transform: scale(0.65); /* Tamaño grande pero seguro para que no desaparezca */
+        transform-origin: center right; 
     }
 }
+
+
