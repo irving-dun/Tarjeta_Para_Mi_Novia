@@ -94,7 +94,7 @@ body {
     background-color: #000;
     color: #fff;
     mix-blend-mode: multiply;
-    font-family: monospace; font-size: 6px; line-height: 6px;
+    font-family: monospace; font-size: 4px; line-height: 4px;
     font-weight: 900; white-space: pre; text-align: left;
     -webkit-text-size-adjust: none;
 }
